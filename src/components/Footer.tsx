@@ -1,4 +1,3 @@
-
 import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
@@ -12,19 +11,19 @@ const Footer = () => {
               Transforming how teams work with our powerful digital productivity platform.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors" aria-label="Facebook" title="Visite nosso Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors" aria-label="Twitter" title="Visite nosso Twitter">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors" aria-label="Instagram" title="Visite nosso Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors" aria-label="LinkedIn" title="Visite nosso LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors" aria-label="GitHub" title="Visite nosso GitHub">
                 <Github className="h-5 w-5" />
               </a>
             </div>
