@@ -4,6 +4,7 @@ import Providers from "./providers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Partytown } from "@qwik.dev/partytown/react";
+import { cookies } from "next/headers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,17 +37,20 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookiesList = await cookies();
+  const usePartytown = cookiesList.get("use-partytown")?.value === "true";
+
   return (
     <html lang="en">
       <head>
-        <Partytown debug={true} forward={["dataLayer.push"]} />
+        {usePartytown && <Partytown debug={true} forward={["dataLayer.push"]} />}
         <script
-          type="text/partytown"
+          type={usePartytown ? "text/partytown" : "text/javascript"}
           dangerouslySetInnerHTML={{
             __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
