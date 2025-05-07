@@ -43,7 +43,7 @@ export default async function RootLayout({
 }>) {
   // const cookiesList = await cookies();
   // const usePartytown = cookiesList.get("use-partytown")?.value === "true";
-  const usePartytown = true;
+  const usePartytown = false;
 
   return (
     <html lang="en">
@@ -66,6 +66,7 @@ export default async function RootLayout({
       >
         <noscript>
           <iframe
+            title="Google Tag Manager"
             src="https://www.googletagmanager.com/ns.html?id=GTM-K8ZLK3J6"
             height="0"
             width="0"
